@@ -82,8 +82,13 @@
     </div>
 </div>
 
+<!-- Load Python packages -->
+<py-config>
+packages = ["numpy", "matplotlib"]
+</py-config>
+
 <py-script>
-from pyscript import document
+from pyscript import document, display
 import numpy as np
 import matplotlib.pyplot as plt
 import logging
@@ -93,7 +98,7 @@ logging.getLogger('matplotlib').setLevel(logging.ERROR)
 days = []
 absences = []
 
-def displaying(event):
+def displaying(event=None):
     day = document.getElementById("day").value
     absence = document.getElementById("absence").value
 
